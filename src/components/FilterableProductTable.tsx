@@ -4,16 +4,18 @@ import ProductTable from './ProductTable'
 import SearchBar from './SearchBar'
 
 type Props = {
-	products: IProduct[]
+	products: IProduct[],
+	title?: string
 };
 
 
-const FilterableProductTable: FC<Props> = ({products}) => {
+const FilterableProductTable: FC<Props> = ({products, title}) => {
 
 	const [filterText, setFilterText] = useState('');
 	const [inStockOnly, setInStockOnly] = useState(false);
 	return (
 		<>
+			<h1>{title}</h1>
 			<SearchBar
 				filterText={filterText} 
 				inStockOnly={inStockOnly} 
@@ -29,4 +31,8 @@ const FilterableProductTable: FC<Props> = ({products}) => {
 	)
 }
 
-export default FilterableProductTable
+FilterableProductTable.defaultProps = {
+	title: "Thinking in React"
+};
+
+export default FilterableProductTable;
