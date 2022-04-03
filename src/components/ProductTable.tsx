@@ -15,6 +15,11 @@ const ProductTable: FC<Props> = ({products, filterText, inStockOnly}) => {
 	let lastCategory: string | null = null;
 
 	products.forEach(product=>{
+
+		if(product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) return;
+
+		if(inStockOnly && !product.stocked) return;
+
 		if(lastCategory !== product.category){
 			rows.push(
 				<ProductCategoryRow

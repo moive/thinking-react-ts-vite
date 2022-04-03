@@ -14,7 +14,12 @@ const FilterableProductTable: FC<Props> = ({products}) => {
 	const [inStockOnly, setInStockOnly] = useState(false);
 	return (
 		<>
-			<SearchBar />
+			<SearchBar
+				filterText={filterText} 
+				inStockOnly={inStockOnly} 
+				onFilterTextChange={setFilterText} 
+				onInStockOnlyChange={setInStockOnly}
+			/>
 			<ProductTable
 				products={products}
 				filterText={filterText}
