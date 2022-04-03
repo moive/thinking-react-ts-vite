@@ -1,0 +1,8 @@
+@mixin FiraSans($name: regular){
+	@if map-has-key($fontFiraSans, $name) {
+		font-family: 'Fira Sans', sans-serif;
+		font-weight: #{map-get($fontFiraSans,$name)};
+	}@else{
+		@error "That font does not exist...!"
+	}
+}
