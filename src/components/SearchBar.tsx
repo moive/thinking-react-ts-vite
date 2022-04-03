@@ -3,11 +3,11 @@ import React, { FC, ReactNode } from 'react'
 type Props = {
 	filterText: string;
 	inStockOnly: boolean;
-	onFilterTextChange: ReactNode; 
-	onInStockOnlyChange?: ReactNode;
+	onFilterTextChange: React.Dispatch<React.SetStateAction<string>>; 
+	onInStockOnlyChange: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SearchBar: FC<Props> = ({filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange}) => {
+const SearchBar: FC<Props> = ({filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange }) => {
 	return (
 		<form>
 			<div>
@@ -27,9 +27,9 @@ const SearchBar: FC<Props> = ({filterText, inStockOnly, onFilterTextChange, onIn
 					/>
 					Only show products in stock
 				</label>
+				{name}
 			</div>
 		</form>
 	)
 }
-
-export default SearchBar
+export default SearchBar;
