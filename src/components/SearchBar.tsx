@@ -15,16 +15,18 @@ const SearchBar: FC<Props> = ({filterText, inStockOnly, onFilterTextChange, onIn
 				    type="text"
 				    placeholder='Search'
 					value={filterText}
+					className="input is-primary"
 					onChange={(e) => onFilterTextChange(e.target.value)}
 				/>
 			</div>
-			<div>
-				<label>
+			<div className='my-3'>
+				<label className='checkbox'>
 					<input
 					    type="checkbox"
+						className='checkbox mr-2'
 						checked={inStockOnly}
 						onChange={(e) => onInStockOnlyChange(e.target.checked)}
-					/>
+					/> 
 					Only show products in stock
 				</label>
 				{name}

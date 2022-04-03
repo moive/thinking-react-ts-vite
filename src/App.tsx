@@ -12,7 +12,7 @@ const products:IProduct[] = [
 
 const App = () => {
   return (
-	<div className="container">
+	<div className="columns">
 		<FilterableProductTable products={products} />
 	</div>
   )

@@ -14,8 +14,8 @@ const FilterableProductTable: FC<Props> = ({products, title}) => {
 	const [filterText, setFilterText] = useState('');
 	const [inStockOnly, setInStockOnly] = useState(false);
 	return (
-		<>
-			<h1>{title}</h1>
+		<div className='mt-6 column is-half is-offset-one-quarter'>
+			<h1 className='title'>{title}</h1>
 			<SearchBar
 				filterText={filterText} 
 				inStockOnly={inStockOnly} 
@@ -27,7 +27,7 @@ const FilterableProductTable: FC<Props> = ({products, title}) => {
 				filterText={filterText}
 				inStockOnly={inStockOnly}
 			/>
-		</>
+		</div>
 	)
 }
 

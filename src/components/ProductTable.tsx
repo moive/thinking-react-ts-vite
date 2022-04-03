@@ -42,7 +42,7 @@ const ProductTable: FC<Props> = ({products, filterText, inStockOnly}) => {
 
 	return (
 		<div>
-			<table>
+			<table className='table is-fullwidth is-hoverable'>
 				<thead>
 					<tr>
 						<th>Name</th>
